@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+  <!-- <h2>여기가 바로 인덱스임!</h2> -->
+  
+  {% for todo in todos%}
+    {% if word in todo.title %}
+      <div class="jumbotron m-5">
+        <h1 class="display-4">{{todo.title}}</h1>
+        <hr class="my-4">
+        <p>{{todo.due_date}}</p>
+        <a class="btn btn-primary btn-lg" href="/todos/{{todo.id}}/delete/" role="button">삭제</a>
+        <a class="btn btn-primary btn-lg" href="/todos/{{todo.id}}/edit/" role="button">수정</a>
+        <a class="btn btn-primary btn-lg" href="/todos/{{todo.id}}/look/" role="button">보기</a>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
