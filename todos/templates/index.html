@@ -3,5 +3,6 @@
   <h2>여기가 바로 인덱스임!</h2>
   {% for todo in todos%}
     <h5>{{todo.due_date}} : {{todo.title}}</h5>
+    <a href="/todos/{{todo.id}}/delete/">삭제</a>
   {% endfor %}
 {% endblock %}
